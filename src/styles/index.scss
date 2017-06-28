@@ -1,0 +1,8 @@
+@import "./var.scss";
+
+body {
+    margin: 0;
+    background-color: $bodycolor;
+    font-family: $fonts;
+    color: $fontcolor;
+}

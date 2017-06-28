@@ -1,3 +1,9 @@
-import 'pages/style.scss';
+import React from 'react';
+import { render } from 'react-dom';
 
-console.log('index pages.');
+import Home from 'pages/Home';
+import 'styles/index.scss';
+
+const root = document.querySelector('#root');
+
+render(<Home />, root);

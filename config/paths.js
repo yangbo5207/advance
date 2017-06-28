@@ -42,7 +42,8 @@ var alias = {
     components: resolveApp('src/components'),
     pages: resolveApp('src/pages'),
     containers: resolveApp('src/containers'),
-    utils: resolveApp('src/containers')
+    utils: resolveApp('src/containers'),
+    styles: resolveApp('src/styles')
 }
 
 // config after eject: we're in ./config/
