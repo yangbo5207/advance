@@ -38,6 +38,13 @@ function getServedPath(appPackageJson) {
   return ensureSlash(servedUrl, true);
 }
 
+var alias = {
+    components: resolveApp('src/components'),
+    pages: resolveApp('src/pages'),
+    containers: resolveApp('src/containers'),
+    utils: resolveApp('src/containers')
+}
+
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
@@ -52,4 +59,5 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  alias: alias
 };
