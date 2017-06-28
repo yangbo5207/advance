@@ -7,6 +7,16 @@ class Home extends Component {
         return (
             <div className="wrap">
                 <Header />
+                <div className="diashboard-main">
+
+                    <div className="main-cards">
+                        <div className="card"></div>
+                        <div className="card"></div>
+                        <div className="card"></div>
+                        <div className="card"></div>
+                        <div className="card"></div>
+                    </div>
+                </div>
             </div>
         )
     }
