@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Link  } from 'react-router-dom';
 import CardReact from './CardReact';
+import CardJS from './CardJS';
+import CardDOM from './CardDOM';
+import CardCSS from './CardCSS';
 import './style.scss';
 
 class Home extends Component {
@@ -9,9 +11,9 @@ class Home extends Component {
             <div className="diashboard-main">
                 <div className="main-cards">
                     <CardReact />
-                    <Link to="/js"><div className="card"></div></Link>
-                    <Link to="/dom"><div className="card"></div></Link>
-                    <Link to="/css"><div className="card"></div></Link>
+                    <CardJS />
+                    <CardDOM />
+                    <CardCSS />
                 </div>
             </div>
         )

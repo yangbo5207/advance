@@ -1,26 +1,4 @@
 @import "src/styles/var.scss";
 
 .react_card {
-    position: relative;
-    .react_card_bg {
-        @include full;
-        background: url('./bg.jpeg') center no-repeat;
-        opacity: 0.1;
-        background-size: cover;
-        z-index: 0;
-    }
-    .react_card_head {
-        height: 40px;
-        background: linear-gradient(270deg, #42b1e5, #089de2);
-        line-height: 40px;
-        color: #FFF;
-        padding-left: 16px;
-        border-radius: 4px 4px 0 0;
-        span {
-            margin: 0 5px;
-        }
-    }
-    .react_card_body {
-        padding: 16px;
-    }
 }
