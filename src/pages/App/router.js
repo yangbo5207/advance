@@ -1,8 +1,10 @@
 import Home from 'pages/Home';
 import LearnReact from 'pages/LearnReact';
+import ReactCase from 'pages/ReactCase';
 import LearnJS from 'pages/LearnJs';
 import LearnCSS from 'pages/LearnCSS';
 import LearnDOM from 'pages/LearnDOM';
+import Profile from 'pages/Profile';
 
 export default [
     {
@@ -25,5 +27,13 @@ export default [
     {
         path: '/dom',
         component: LearnDOM
+    },
+    {
+        path: '/reactcase',
+        component: ReactCase
+    },
+    {
+        path: '/profile',
+        component: Profile
     }
 ]
