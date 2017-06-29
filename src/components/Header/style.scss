@@ -17,16 +17,9 @@ header {
 
     .logo {
         font-size: 18px;
-        padding-left: 30px;
+        margin-left: 16px;
         position: relative;
         color: #2d2d2d;
-        &:before {
-            content: '\e608';
-            font-family: "iconfont";
-            color: $topiccolor;
-            position: absolute;
-            left: 0;
-        }
     }
 
     .profile {

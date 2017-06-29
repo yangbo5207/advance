@@ -1,0 +1,39 @@
+@mixin fontface ($font_name) {
+    font-family: $font_name;
+    src: url('./fonts/#{$font_name}.eot?t=1498726624880'); /* IE9*/
+    src: url('./fonts/#{$font_name}.eot?t=1498726624880#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./fonts/#{$font_name}.woff?t=1498726624880') format('woff'), /* chrome, firefox */
+    url('./fonts/#{$font_name}.ttf?t=1498726624880') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('./fonts/#{$font_name}.svg?t=1498726624880#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+@font-face {
+    @include fontface('iconfont');
+}
+
+.advance {
+    &-icon {
+        font-family: 'iconfont'!important;
+        font-style: normal;
+        font-size:16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &-anli:before { content: "\e641"; } // 案例
+        &-jianshu:before { content: "\e613"; }
+        &-list:before { content: "\e63b"; }
+        &-github:before { content: "\e60a"; }
+        &-case:before { content: "\e627"; }  // case
+        &-segmentfault:before { content: "\e601"; } // segmentfault
+        &-xiangqing:before { content: "\e628"; }  // 详情
+        &-juejin:before { content: "\e602"; }
+        &-react:before { content: "\e60b"; }
+        &-profile:before { content: "\e600"; }
+        &-logo:before { content: "\e608"; }  // logo
+    }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0) };
+    to { transform: rotate(360deg)};
+}
