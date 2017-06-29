@@ -3,3 +3,11 @@ $fonts: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $bodycolor: #F3F3F3;
 $topiccolor: #1585ff;
 $fontcolor: #626262;
+
+@mixin full {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
