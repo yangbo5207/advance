@@ -1,46 +1,6 @@
 @import "../../styles/var.scss";
 @import '../../styles/common.scss';
 
-header {
-    background-color: #FFFFFF;
-    height: 80px;
-    border-bottom: 1px solid #d7d7d7;
-
-    .main {
-        width: $width;
-        height: 100%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-size: 18px;
-        padding-left: 30px;
-        position: relative;
-        color: #2d2d2d;
-        &:before {
-            content: '\e608';
-            font-family: "iconfont";
-            color: $topiccolor;
-            position: absolute;
-            left: 0;
-        }
-    }
-
-    .profile {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 30px;
-        &:after {
-            content: '\e600';
-            font-family: "iconfont";
-        }
-    }
-}
-
 .diashboard-main {
     width: $width;
     margin: 0 auto;
@@ -58,6 +18,6 @@ header {
         background-color: #FFF;
         margin-bottom: 40px;
         border-radius: 4px;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 }
