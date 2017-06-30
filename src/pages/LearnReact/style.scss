@@ -9,29 +9,31 @@
 
 .react_tutorial_list_item {
     border-bottom: 1px solid #f3f3f3;
+    padding: 50px 0 50px 0;
     .body {
-        padding: 16px 0 16px 0;
+
         display: flex;
     }
     img {
-        width: 90px;
-        height: 90px;
-        margin-right: 16px;
+        width: 150px;
+        height: 150px;
+        margin-right: 30px;
     }
     .content {
-        flex-grow: 1;
+        flex: 1;
         .title {
             color: #333;
             font-weight: bold;
+            font-size: 18px;
         }
         .star {
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .desc {
-            margin-top: 10px;
+            margin-top: 30px;
         }
         .know_more {
-            margin-top: 20px;
+            margin-top: 40px;
             font-size: 12px;
             height: 35px;
             padding: 0 16px;

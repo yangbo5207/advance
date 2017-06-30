@@ -15,7 +15,7 @@
     &-icon {
         font-family: 'iconfont'!important;
         font-style: normal;
-        font-size:16px;
+        font-size:inhert;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
@@ -33,6 +33,7 @@
         &-css:before { content: "\e63a"}
         &-js:before { content: "\e87b"}
         &-dom:before { content: "\e60f"}
+        &-star:before { content: "\e733"}
     }
 }
 

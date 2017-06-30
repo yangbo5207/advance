@@ -3,6 +3,7 @@ import Card from 'components/Card';
 import Icon from 'components/Icon';
 import config from 'configs';
 import defaultImg from './default.jpg';
+import Star from 'components/Star';
 import './style.scss';
 
 class LearnReact extends Component {
@@ -19,7 +20,7 @@ class LearnReact extends Component {
                                         <img src={item.img ? item.img : defaultImg} alt=""/>
                                         <div className="content">
                                             <div className="title">{item.title}</div>
-                                            <div className="star">{item.star}星</div>
+                                            <Star className="star" level={item.star} />
                                             <div className="desc">{item.desc}</div>
                                             <a href={item.url} className="know_more"><Icon type="xiangqing" className="xiangqing" />查看详情</a>
                                         </div>
