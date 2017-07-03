@@ -10,11 +10,14 @@
 .react_tutorial_list_item {
     border-bottom: 1px solid #f3f3f3;
     padding: 50px 0 50px 0;
+    &:last-child {
+        border-bottom: none;
+    }
     .body {
 
         display: flex;
     }
-    img {
+    .img {
         width: 150px;
         height: 150px;
         margin-right: 30px;

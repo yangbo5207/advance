@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Card from 'components/Card';
 import Icon from 'components/Icon';
+import Star from 'components/Star';
+import Image from 'components/Image';
 import config from 'configs';
 import defaultImg from './default.jpg';
-import Star from 'components/Star';
 import './style.scss';
 
 class LearnReact extends Component {
@@ -17,7 +18,7 @@ class LearnReact extends Component {
                             {config.reactTutorialList.map((item, i) => (
                                 <div className="react_tutorial_list_item" key={i}>
                                     <div className="body">
-                                        <img src={item.img ? item.img : defaultImg} alt=""/>
+                                        <Image className="img" src={item.img ? item.img : defaultImg} mode="wspectFill" />
                                         <div className="content">
                                             <div className="title">{item.title}</div>
                                             <Star className="star" level={item.star} />
