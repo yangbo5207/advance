@@ -18,7 +18,7 @@ class LearnReact extends Component {
                             {config.reactTutorialList.map((item, i) => (
                                 <div className="react_tutorial_list_item" key={i}>
                                     <div className="body">
-                                        <Image className="img" src={item.img ? item.img : defaultImg} mode="wspectFill" />
+                                        <Image className="img" src={item.img ? item.img : defaultImg} />
                                         <div className="content">
                                             <div className="title">{item.title}</div>
                                             <Star className="star" level={item.star} />
@@ -36,4 +36,4 @@ class LearnReact extends Component {
     }
 }
 
-export default LearnReact; 
+export default LearnReact;

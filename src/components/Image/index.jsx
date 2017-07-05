@@ -1,30 +1,17 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
-import { disposeMode } from './utils';
 import defaultImg from './default.jpg';
 import './style.scss';
 
 class Image extends Component {
 
     state = {
-        show: false,
-        mode: null
+        show: false
     }
 
     componentDidMount() {
-        const { mode, bindload, binderror } = this.props;
         const { wrap } = this.refs;
-
-        disposeMode(wrap, mode).then(mode => {
-            this.setState({
-                mode
-            })
-            bindload && bindload();
-        })
-        .catch(err => {
-             binderror && binderror();
-        })
 
         const cb = () => {
             const viewHeight = document.documentElement.clientHeight;
@@ -42,31 +29,34 @@ class Image extends Component {
     }
 
     render() {
-        const { src, alt, width, height, className } = this.props;
+        const { src, width, height, className } = this.props;
         const { mode, show } = this.state;
 
-        const wrapStyle = {
+        const wrapSty = {
             width: `${width}px`,
             height: `${height}px`
         }
 
         const classes = classNames('image-wrap', {
-            [className]: !!className,
-            'fade-in': this.state.show
+            [className]: !!className
         });
 
+        const imgcls = classNames({
+            [mode]: !!mode,
+            "fade-in": show
+        })
+
         const curSrc = show ? src : defaultImg;
+        const imgsty = {
+            backgroundImage: `url(${curSrc})`
+        }
 
         return (
-            <div ref="wrap" className={ classes } style={ wrapStyle }>
-                <img ref="image" className={ mode } src={ curSrc } alt={ alt } />
+            <div ref="wrap" className={ classes } style={ wrapSty }>
+                <div ref="image" className={ imgcls } style={imgsty}></div>
             </div>
         )
     }
 }
 
 export default Image;
-
-
-// 图片会缓存，在IE下，只有新图片才会触发图片的onLoad事件，因此在绑定onLoad事件之前，需要先判断是否已经缓存
-// 如果已经缓存，那么img.complete = true
