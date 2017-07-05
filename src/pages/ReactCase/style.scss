@@ -7,13 +7,12 @@
 }
 
 .react_case_side {
-    width: 150px;
-    border-right: 5px solid #F3F3F3;
-    font-size: 12px;
+    width: 250px;
+    border-right: 1px solid #F3F3F3;
     padding: 30px 0;
 
     .side_item {
-        height: 30px;
+        height: 40px;
         display: flex;
         align-items: center;
         text-indent: 20px;
@@ -23,8 +22,8 @@
             width: 100%;
         }
 
-        &.active {
-            background-color: #ccc;
+        &.active a {
+            color: orange;
         }
     }
 }
@@ -35,11 +34,20 @@
     height: 800px;
 }
 
-.example-appear {
+.example-enter {
   opacity: 0.01;
 }
 
-.example-appear.example-appear-active {
+.example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 1500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
