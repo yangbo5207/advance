@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Create from './Create';
-import Props from './Props';
-import State from './State';
-import Refs from './Refs';
-import Interactive from './Interactive';
+import routers from './router';
+
+import './style.scss';
 
 class Case extends Component {
     render() {
         const path = this.props.match.path;
         return (
             <div className="react_case_wrap">
-                <div className="main">
-                    react case
-                    <Link to={`${path}/create`}>aaaa</Link>
-                    <Link to={`${path}/props`}>bbb</Link>
-                    <Link to={`${path}/state`}>ccc</Link>
-                    <Link to={`${path}/refs`}>ddd</Link>
-                    <Link to={`${path}/interactive`}>eee</Link>
+                <div className="react_case_side">
+                    {routers.map((item, i) => (
+                        <div className={`${path}${item.path}` === this.props.location.pathname ? 'side_item active' : 'side_item' } key={i}>
+                            <Link to={`${path}${item.path}`}>{item.title}</Link>
+                        </div>
+                    ))}
                 </div>
 
-                <Route exact path={`${path}/create`} component={Create} />
-                <Route exact path={`${path}/props`} component={Props} />
-                <Route exact path={`${path}/state`} component={State} />
-                <Route exact path={`${path}/refs`} component={Refs} />
-                <Route exact path={`${path}/interactive`} component={Interactive} />
+                <div className="react_case_content">
+                    <ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionAppearTimeout="1500" transitionEnterTimeout={500}>
+                        <Route exact path={path} component={Create} />
+                        {routers.map((item, i) => (
+                            <Route path={`${path}${item.path}`} component={item.component} key={i} />
+                        ))}
+                    </ReactCSSTransitionGroup>
+                </div>
             </div>
         )
     }
