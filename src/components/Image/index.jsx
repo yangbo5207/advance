@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import debounce from 'lodash/debounce';
 import { disposeMode } from './utils';
 import defaultImg from './default.jpg';
 import './style.scss';
@@ -27,10 +28,8 @@ class Image extends Component {
 
         const cb = () => {
             const viewHeight = document.documentElement.clientHeight;
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const woffsetTop = wrap.offsetTop;
-            console.log(scrollTop);
-            if (woffsetTop <= viewHeight + scrollTop && woffsetTop > scrollTop) {
+            const wbounds = wrap.getBoundingClientRect();
+            if (wbounds.top <= viewHeight && wbounds.top > 0) {
                 this.setState({
                     show: true
                 })
@@ -39,7 +38,7 @@ class Image extends Component {
 
         cb();
 
-        window.addEventListener('scroll', cb, false);
+        window.addEventListener('scroll', debounce(cb, 100), false);
     }
 
     render() {
