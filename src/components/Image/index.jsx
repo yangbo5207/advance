@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { disposeMode } from './utils';
+import defaultImg from './default.jpg';
 import './style.scss';
 
 class Image extends Component {
 
     state = {
+        show: false,
         mode: null
     }
 
     componentDidMount() {
         const { mode, bindload, binderror } = this.props;
+        const { wrap } = this.refs;
 
-        disposeMode(this.refs.wrap, mode).then(mode => {
+        disposeMode(wrap, mode).then(mode => {
             this.setState({
                 mode
             })
@@ -21,22 +24,43 @@ class Image extends Component {
         .catch(err => {
              binderror && binderror();
         })
+
+        const cb = () => {
+            const viewHeight = document.documentElement.clientHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const woffsetTop = wrap.offsetTop;
+            console.log(scrollTop);
+            if (woffsetTop <= viewHeight + scrollTop && woffsetTop > scrollTop) {
+                this.setState({
+                    show: true
+                })
+            }
+        }
+
+        cb();
+
+        window.addEventListener('scroll', cb, false);
     }
 
     render() {
         const { src, alt, width, height, className } = this.props;
-        const { mode } = this.state;
+        const { mode, show } = this.state;
 
         const wrapStyle = {
             width: `${width}px`,
             height: `${height}px`
         }
 
-        const classes = classNames('image-wrap', className);
+        const classes = classNames('image-wrap', {
+            [className]: !!className,
+            'fade-in': this.state.show
+        });
+
+        const curSrc = show ? src : defaultImg;
 
         return (
             <div ref="wrap" className={ classes } style={ wrapStyle }>
-                <img ref="image" className={ mode } src={ src } alt={ alt } />
+                <img ref="image" className={ mode } src={ curSrc } alt={ alt } />
             </div>
         )
     }

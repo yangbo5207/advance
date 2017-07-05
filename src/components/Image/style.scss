@@ -3,7 +3,12 @@
     height: 225px;
     overflow: hidden;
     position: relative;
-    background-color: #000000;
+    opacity: 0;
+    &.fade-in {
+        animation-name: fadein;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
 }
 .image-wrap img {
     position: absolute;
@@ -84,4 +89,9 @@
 .image-wrap img.bottom-right {
     bottom: 0;
     right: 0;
+}
+
+@keyframes fadein {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
 }
