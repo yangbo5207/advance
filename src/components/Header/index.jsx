@@ -11,6 +11,7 @@ function Header() {
                     <Icon type="logo" color="#1585ff" />
                     <span className="logo">Advance</span>
                 </Link>
+                <Link to="/keypass">keypass</Link>
                 <Link to="/profile"><Icon type="profile"/></Link>
             </div>
         </header>

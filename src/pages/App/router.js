@@ -5,6 +5,7 @@ import LearnJS from 'pages/LearnJs';
 import LearnCSS from 'pages/LearnCSS';
 import LearnDOM from 'pages/LearnDOM';
 import Profile from 'pages/Profile';
+import Keypass from 'pages/Keypass';
 
 export default [
     {
@@ -35,5 +36,9 @@ export default [
     {
         path: '/profile',
         component: Profile
+    },
+    {
+        path: '/keypass',
+        component: Keypass
     }
 ]
