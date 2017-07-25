@@ -3,6 +3,7 @@ import CardReact from './CardReact';
 import CardJS from './CardJS';
 import CardDOM from './CardDOM';
 import CardCSS from './CardCSS';
+import Button from 'components/base/Button';
 import './style.scss';
 
 class Home extends Component {
@@ -15,6 +16,8 @@ class Home extends Component {
                     <CardDOM />
                     <CardCSS />
                 </div>
+
+                <Button>testxxxxx</Button>
             </div>
         )
     }
